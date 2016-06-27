@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d1256323-1f4f-440e-85d5-a523576808a9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55527/SecurityService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SecurityService.xsd" MetadataType="Schema" ID="43ad7395-f54a-4812-b23b-6f58883ef5d7" SourceId="1" SourceUrl="http://localhost:55527/SecurityService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SecurityService.wsdl" MetadataType="Wsdl" ID="b3edd48b-77b6-449e-ad3e-7c6fb711862c" SourceId="1" SourceUrl="http://localhost:55527/SecurityService.svc?wsdl" />
+    <MetadataFile FileName="SecurityService.disco" MetadataType="Disco" ID="02313bb5-9f2a-4054-8143-7cc6d21b379d" SourceId="1" SourceUrl="http://localhost:55527/SecurityService.svc?disco" />
+    <MetadataFile FileName="SecurityService1.xsd" MetadataType="Schema" ID="fb7d69bb-14a5-4d58-91f2-28e62a25d2f8" SourceId="1" SourceUrl="http://localhost:55527/SecurityService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SecurityService2.xsd" MetadataType="Schema" ID="02b8e32f-682e-4cad-9e40-e848ac8f6bc0" SourceId="1" SourceUrl="http://localhost:55527/SecurityService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

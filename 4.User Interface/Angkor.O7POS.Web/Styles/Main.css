@@ -1,0 +1,119 @@
+@font-face {
+    font-family: opensans;
+    src: local(opensans), url("/Libraries/open-sans/OpenSans-Regular.ttf") format("opentype");
+}
+
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
+.ui-dialog-titlebar {
+      color: #fff !important; 
+  background: #2aabd2 !important;
+  border-color: #28a4c9 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: opensans;
+}
+
+p, div {
+    font-family: opensans;
+}
+
+.addon-invisible-left {
+    border-right: 0;
+    background: transparent;
+}
+
+.control-invisible-right {
+    border-left: 0;
+}
+
+.fa-show {
+    animation: showAnimation linear 0.2s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    -webkit-animation: showAnimation linear 0.2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+}
+
+@keyframes showAnimation {
+    0% {
+        transform: scaleX(0.00) scaleY(0.00);
+        -webkit-transform: scaleX(0.00) scaleY(0.00);
+    }
+    100% {
+        transform: scaleX(1.00) scaleY(1.00);
+        -webkit-transform: scaleX(0.00) scaleY(0.00);
+    }
+}
+
+@-webkit-keyframes showAnimation {
+    0% {
+        transform: scaleX(0.00) scaleY(0.00);
+        -webkit-transform: scaleX(0.00) scaleY(0.00);
+    }
+    100% {
+        transform: scaleX(1.00) scaleY(1.00);
+        -webkit-transform: scaleX(1.00) scaleY(1.00);
+    }
+}
+
+.popover-title {
+    background-color: #337ab7;
+    padding: 6px 14px;
+    border-radius: 0 !important;
+}
+
+.dropdown-menu .inner {
+    max-height: none;
+}
+
+
+.navbar-primary {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.navbar-primary a {
+    color: #fff;
+}
+
+.navbar-primary .dropdown-menu  ul li a:hover,
+.navbar-primary .dropdown-menu  ul li a:focus,
+.navbar-primary .dropdown-menu  a:hover,
+.navbar-primary .dropdown-menu  a:focus {
+    background-color: #ffffff;
+    background-position: 0 -15px;
+}
+
+.navbar-primary .dropdown-menu  ul li a:active,
+.navbar-primary .dropdown-menu  ul li a.active,
+.navbar-primary .dropdown-menu  a:active,
+.navbar-primary .dropdown-menu  a.active {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.navbar-primary ul li a:hover,
+.navbar-primary ul li a:focus,
+.navbar-primary a:hover,
+.navbar-primary a:focus {
+    background-color: #265a88;
+    background-position: 0 -15px;
+}
+
+.navbar-primary ul li a:active,
+.navbar-primary ul li a.active,
+.navbar-primary a:active,
+.navbar-primary a.active {
+    background-color: #265a88;
+    border-color: #245580;
+}
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: #265a88;
+    border-color: #245580;
+}

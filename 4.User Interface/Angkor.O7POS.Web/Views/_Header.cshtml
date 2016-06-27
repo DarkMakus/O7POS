@@ -1,0 +1,35 @@
+﻿<header>
+    <nav class="navbar navbar-primary">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" href="#">O7POS</a>
+            </div>                        
+            <form class="navbar-form navbar-left">
+                <select class="selectpicker" data-style="btn-info" data-header="Sucursales:">
+                    @foreach (var branch in User.Company.Branches)
+                    {
+                        <option value="@branch.Id">@branch.Description</option>
+                    }
+                </select>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sesion <i class="fa fa-cog"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Cambiar sucursal</a></li>
+                        <li><a href="#">Cambiar contrasena</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Cerrar sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

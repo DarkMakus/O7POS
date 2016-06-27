@@ -1,0 +1,77 @@
+﻿@model Angkor.O7POS.Model.Authentication.LogInViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="~/Libraries/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Libraries/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Libraries/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/Libraries/font-awesome-4.5.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Styles/Main.css" rel="stylesheet" />
+    <link href="~/Styles/Authentication/LogInView.css" rel="stylesheet" />
+</head>
+<body>
+<div class="form-login">
+    <div class="row">
+        <h1 class="text-center">O7Solution <small>O7POS</small>
+        </h1>
+    </div>
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-body" id="LoginPanel">
+                <div class="form-group">
+                    <h3 class="text-center">Inicio de sesión</h3>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon addon-invisible-left"><i class="fa fa-user"></i></span>
+                        @Html.TextBoxFor(model => model.NickName, new {@class = "form-control control-invisible-right", placeholder = "Usuario"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon addon-invisible-left"><i class="fa fa-lock"></i></span>
+                        @Html.PasswordFor(model => model.Password, new {@class = "form-control control-invisible-right", placeholder = "Password"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p class="text-primary text-right">
+                        <small>Olvide mi contraseña</small>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <button class="form-control btn btn-primary" onclick="UserAccess();">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div id="branch-dialog" title="Conectarse a">
+    <p>Compania:</p>
+    <select id="companies" class="selectpicker" title="Choose one of the following..."></select>
+    <p>Sucursal:</p>
+    <select id="branches" class="selectpicker" title="Choose one of the following..."></select>    
+</div>
+
+<noscript>
+        <div class="alert alert-success text-center">El sistema que estás viendo requiere para su funcionamiento el uso de JavaScript.Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</div>
+    </noscript>
+
+    <script src="~/Libraries/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+    <script src="~/Libraries/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <script src="~/Libraries/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script src="~/Libraries/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="~/Scripts/Authentication/LogInView.ready.js"></script>
+    <script src="~/Scripts/Authentication/LogInViewModel.js"></script>
+    <script src="~/Scripts/Authentication/LogInView.function.js"></script>
+    <script src="~/Scripts/Main.js"></script>
+</body>
+</html>
+
