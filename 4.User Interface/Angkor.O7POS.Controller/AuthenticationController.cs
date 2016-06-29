@@ -19,7 +19,16 @@ namespace Angkor.O7POS.Controller
 
         [HttpPost] public JsonResult GetAccess (LogInViewModel model)
         {
-            List<Company> credentials = CommonServiceClient.GetSecurityContract ( ).FindCredentials (model.NickName, model.Password);                        
+            //List<Company> credentials = CommonServiceClient.GetSecurityContract ( ).FindCredentials (model.NickName, model.Password);                        
+            var credentials = new List <Company>
+            {
+                new Company
+                {
+                    Id = "001",
+                    Description = "Compania01",
+                    Branches = new List <Branch> {new Branch {Id = "001", Description = "Sucursal01"}}
+                }
+            };
             return Json (credentials, JsonRequestBehavior.AllowGet);
         }
 
