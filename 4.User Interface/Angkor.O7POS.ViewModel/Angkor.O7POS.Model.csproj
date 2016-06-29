@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Angkor.O7Framework.ServiceClient">
-      <HintPath>..\..\packages\O7WebFramework\Angkor.O7Framework.ServiceClient.dll</HintPath>
+    <Reference Include="Angkor.O7Framework.ServiceClient.Contracts">
+      <HintPath>..\..\packages\O7WebFramework\Angkor.O7Framework.ServiceClient.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

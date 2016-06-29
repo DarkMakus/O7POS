@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Angkor.O7Framework.ServiceClient;
 using Angkor.O7Framework.ServiceClient.SecurityClient;
 using Angkor.O7Framework.Web;
 using Angkor.O7Framework.Web.Serializable;
@@ -18,33 +19,8 @@ namespace Angkor.O7POS.Controller
 
         [HttpPost] public JsonResult GetAccess (LogInViewModel model)
         {
-            //List <Company> companies = CommonServiceClient.GetSecurityContract ( ).FindCredentials (model.NickName, model.Password);
-            var companies = new List <Company>
-            {
-                new Company
-                {
-                    Id = "001",
-                    Description = "Compania01",
-                    Branches =
-                        new List <Branch>
-                        {
-                            new Branch {Id = "001", Description = "Sucursal01"},
-                            new Branch {Id = "002", Description = "Sucursal02"}
-                        }
-                },
-                new Company
-                {
-                    Id = "002",
-                    Description = "Compania02",
-                    Branches =
-                        new List <Branch>
-                        {
-                            new Branch {Id = "001", Description = "Sucursal01"},
-                            new Branch {Id = "002", Description = "Sucursal02"}
-                        }
-                }
-            };
-            return Json (companies, JsonRequestBehavior.AllowGet);
+            List<Company> credentials = CommonServiceClient.GetSecurityContract ( ).FindCredentials (model.NickName, model.Password);                        
+            return Json (credentials, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost] public ActionResult LogIn (LogInViewModel model)

@@ -30,11 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Angkor.O7Framework.ServiceClient">
-      <HintPath>..\..\packages\O7WebFramework\Angkor.O7Framework.ServiceClient.dll</HintPath>
+    <Reference Include="Angkor.O7Framework.ServiceClient.Contracts">
+      <HintPath>..\..\packages\O7WebFramework\Angkor.O7Framework.ServiceClient.Contracts.dll</HintPath>
     </Reference>
-    <Reference Include="Angkor.O7Framework.Web">
-      <HintPath>..\..\packages\O7WebFramework\Angkor.O7Framework.Web.dll</HintPath>
+    <Reference Include="Angkor.O7Framework.Web.Contracts">
+      <HintPath>..\..\packages\O7WebFramework\Angkor.O7Framework.Web.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
