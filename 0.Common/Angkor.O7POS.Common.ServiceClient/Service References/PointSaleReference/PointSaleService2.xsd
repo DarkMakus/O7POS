@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:45167/PointSaleService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Angkor.O7POS.Common.Entities" />
+  <xs:element name="FindLocals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindLocalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Angkor.O7POS.Common.Entities" minOccurs="0" name="FindLocalsResult" nillable="true" type="q1:ArrayOfSaleLocal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

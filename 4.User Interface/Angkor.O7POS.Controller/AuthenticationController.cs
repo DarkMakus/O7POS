@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -7,38 +8,54 @@ using Angkor.O7Framework.ServiceClient.SecurityClient;
 using Angkor.O7Framework.Web;
 using Angkor.O7Framework.Web.Serializable;
 using Angkor.O7POS.Model.Authentication;
+using Angkor.O7POS.Common.ServiceClient;
+using Angkor.O7POS.Common.ServiceClient.PointSaleReference;
 
 namespace Angkor.O7POS.Controller
 {
     public partial class AuthenticationController : O7Controller
     {
-        public ActionResult LogIn ( )
+        public ActionResult LogIn()
         {
-            return View ( );
+            return View();
         }
 
-        [HttpPost] public JsonResult GetAccess (LogInViewModel model)
+        [HttpPost]
+        public JsonResult GetAccess(LogInViewModel model)
         {
-            //List<Company> credentials = CommonServiceClient.GetSecurityContract ( ).FindCredentials (model.NickName, model.Password);                        
-            var credentials = new List <Company>
+            List<Company> credentials = CommonServiceClient.GetSecurityContract().FindCredentials(model.NickName, model.Password);
+
+            var credential = new List<dynamic>();
+
+            foreach (Company company in credentials)
             {
-                new Company
+                List<dynamic> branches = new List<dynamic>();
+                foreach (Branch branch in company.Branches)
                 {
-                    Id = "001",
-                    Description = "Compania01",
-                    Branches = new List <Branch> {new Branch {Id = "001", Description = "Sucursal01"}}
+                    List<SaleLocal> points = O7POSServiceClient.PointSaleContract.FindLocals(company.Id, branch.Id);
+                    var pointSales = new List<dynamic>();
+                    foreach (SaleLocal locales in points)
+                    {
+                        pointSales.Add(new { locales.Id, locales.Name, locales.Address });
+                    }
+                    dynamic bran = new { branch.Id, branch.Description, PointSales = pointSales.ToArray() };
+                    branches.Add(bran);
                 }
-            };
-            return Json (credentials, JsonRequestBehavior.AllowGet);
+                dynamic comp = new { company.Id, company.Description, Branches = branches.ToArray() };
+                credential.Add(comp);
+            }
+
+            return Json(credential.ToArray(), JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost] public ActionResult LogIn (LogInViewModel model)
+        [HttpPost]
+        public ActionResult LogIn(LogInViewModel model)
         {
-            O7UserSerializable serializeModel = BuildO7UserSerializable (model);
-            string ticket = BuildEncryptedTicket (serializeModel);
-            var cookie = new HttpCookie (FormsAuthentication.FormsCookieName, ticket);
-            Response.Cookies.Add (cookie);
-            return RedirectToAction ("RegisterProduct", "Sales");
+            O7UserSerializable serializeModel = BuildO7UserSerializable(model);
+            string ticket = BuildEncryptedTicket(serializeModel);
+            var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, ticket);
+            Response.Cookies.Add(cookie);
+            return RedirectToAction("RegisterProduct", "Sales");
         }
     }
 }

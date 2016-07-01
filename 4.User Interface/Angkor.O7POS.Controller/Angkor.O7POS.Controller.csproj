@@ -85,6 +85,10 @@
     <Compile Include="SalesController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\0.Common\Angkor.O7POS.Common.ServiceClient\Angkor.O7POS.Common.ServiceClient.csproj">
+      <Project>{79100c94-7132-4ffc-a8a5-8b345bfe99a2}</Project>
+      <Name>Angkor.O7POS.Common.ServiceClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Angkor.O7POS.ViewModel\Angkor.O7POS.Model.csproj">
       <Project>{FEB70137-E559-424B-913D-8752304B5004}</Project>
       <Name>Angkor.O7POS.Model</Name>

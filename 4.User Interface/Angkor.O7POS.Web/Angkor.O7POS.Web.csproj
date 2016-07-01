@@ -263,6 +263,10 @@
     <Content Include="Views\Authentication\LogIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\0.Common\Angkor.O7POS.Common.ServiceClient\Angkor.O7POS.Common.ServiceClient.csproj">
+      <Project>{79100c94-7132-4ffc-a8a5-8b345bfe99a2}</Project>
+      <Name>Angkor.O7POS.Common.ServiceClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Angkor.O7POS.Controller\Angkor.O7POS.Controller.csproj">
       <Project>{dea88c31-f094-407f-bb46-80f26fcea3cd}</Project>
       <Name>Angkor.O7POS.Controller</Name>
